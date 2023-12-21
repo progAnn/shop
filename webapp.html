@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Заказы</title>
+</head>
+<body>
+    <div>
+        <ul id="main" class="osnova">
+            <li>
+                <img src="image/hotdog.png">
+                <p>Хотдог "Классика"</p>
+                <p>256 ₽</p>
+                <button id="zakaz1">Заказать</button>
+            </li>
+            <li>
+                <img src="image/fish.png">
+                <p>Запеченная рыба</p>
+                <p>599 ₽</p>
+                <button id="zakaz2">Заказать</button>
+            </li>
+        </ul>
+        <form id="form" class="osnova">
+            <input type="text" placeholder="Имя">
+            <input type="text" placeholder="Адрес">
+            <input type="text" placeholder="Телефон">
+            <button>Оформить</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById("main").classList.add("active");
+        let zakaz1 = document.getElementById("zakaz1");
+        let zakaz2 = document.getElementById("zakaz2");
+        zakaz1.addEventListener("click", () => {
+            document.getElementById("main").classList.remove("active");
+            document.getElementById("form").classList.add("active");
+        })
+        zakaz2.addEventListener("click", () => {
+            document.getElementById("main").classList.remove("active");
+            document.getElementById("form").classList.add("active");
+        })
+    </script>
+</body>
+</html>
+
+<style>
+    body{
+        background-image: url("image/fon.jpg");
+	    background-size: cover;
+    }
+    div{
+        background-color: khaki;
+        width: 300px;
+        margin: auto;
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+	    align-items: center;
+        padding: 10px;
+    }
+    img{
+        display: block;
+        margin: auto;
+    }
+    p{
+	    text-align: center;
+    }
+    button{
+        background-color: #cb2d41;
+        border-color: #cb2d41;
+        height: 40px;
+        width: 160px;
+        color: #fff;
+        font-size: 18px;
+        display: block;
+        margin: auto;
+        padding: 5px;
+    }
+    input{
+        width: 87%;
+        padding: 12px;
+        margin: 5px;
+        font-size: 14px;
+        border-radius: 5px;
+    }
+
+    .osnova{
+        display: none;
+    }
+    .osnova.active{
+        display: block;
+    }
+</style>
